@@ -1,0 +1,87 @@
+<!doctype html>
+<html lang="ko">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <meta name="description" content="원준호의 프로페셔널 웹사이트">
+  <meta name="theme-color" content="#1877f2">
+  <title>원준호 | 앱 개발자</title>
+  <link rel="stylesheet" href="styles.css">
+  <script src="script.js" defer></script>
+</head>
+<body>
+  <header class="site-header">
+    <a class="brand" href="#home" aria-label="원준호 홈">원준호</a>
+    <button class="menu-toggle" type="button" aria-expanded="false" aria-controls="site-nav">메뉴</button>
+    <nav id="site-nav" class="site-nav" aria-label="주요 메뉴">
+      <a href="#home">Home</a>
+      <a href="#about">About</a>
+      <a href="#experience">Experience</a>
+      <a href="#research">Research</a>
+      <a href="#contact">Contact</a>
+      <a href="#games">Games</a>
+    </nav>
+  </header>
+
+  <main>
+    <section id="home" class="hero section-shell" aria-labelledby="home-title">
+      <div class="hero-copy">
+        <p class="eyebrow">APP DEVELOPER · SAMSUNG ELECTRONICS</p>
+        <h1 id="home-title">안녕하세요.</h1>
+        <p class="hero-lede">사용자에게 오래 남는 모바일 경험을 만드는 앱개발자 원준호입니다.</p>
+        <div class="hero-actions">
+          <a class="button button-primary" href="#about">더 알아보기</a>
+          <a class="button button-secondary" href="#games">게임 플레이</a>
+        </div>
+      </div>
+      <aside class="hero-card" aria-label="프로필 요약">
+        <span class="status-dot" aria-hidden="true"></span>
+        <p class="card-kicker">CURRENTLY</p>
+        <h2>앱 개발</h2>
+        <p class="muted">Kotlin · Java</p>
+        <p class="muted">삼성전자에서 2년째 일하고 있습니다.</p>
+      </aside>
+    </section>
+
+    <section id="about" class="section-shell content-section" aria-labelledby="about-title">
+      <div class="section-heading"><p class="eyebrow">01 · ABOUT</p><h2 id="about-title">작은 디테일에서 시작되는 경험</h2></div>
+      <div class="two-column">
+        <p class="section-lede">안녕하세요. 모바일 환경에서 자연스럽고 안정적인 제품 경험을 만드는 일에 관심이 있습니다.</p>
+        <div class="info-card"><h3>기술 스택</h3><ul class="tag-list"><li>Kotlin</li><li>Java</li><li>Android</li><li>Product thinking</li></ul></div>
+      </div>
+    </section>
+
+    <section id="experience" class="section-shell content-section" aria-labelledby="experience-title">
+      <div class="section-heading"><p class="eyebrow">02 · EXPERIENCE</p><h2 id="experience-title">꾸준히 쌓아온 개발의 시간</h2></div>
+      <article class="timeline-card"><div><span class="timeline-year">2024 — PRESENT</span><h3>삼성전자 · 앱개발자</h3></div><p class="muted">모바일 애플리케이션 개발과 사용자 경험 개선에 집중하고 있습니다.</p></article>
+    </section>
+
+    <section id="research" class="section-shell content-section" aria-labelledby="research-title">
+      <div class="section-heading"><p class="eyebrow">03 · RESEARCH</p><h2 id="research-title">더 나은 방법을 탐구합니다</h2></div>
+      <div class="research-grid"><article class="info-card"><span class="number">01</span><h3>모바일 UX</h3><p class="muted">빠르고 이해하기 쉬운 인터랙션을 고민합니다.</p></article><article class="info-card"><span class="number">02</span><h3>안정적인 코드</h3><p class="muted">읽기 쉽고 오래 유지되는 구조를 지향합니다.</p></article></div>
+      <p class="private-note">프로젝트 상세 내용과 공개 포트폴리오는 비공개입니다.</p>
+    </section>
+
+    <section id="games" class="section-shell content-section game-section" aria-labelledby="games-title">
+      <div class="section-heading"><p class="eyebrow">04 · GAMES</p><h2 id="games-title">Retro Worm</h2><p class="section-lede">방향키, WASD 또는 화면 버튼으로 지렁이를 움직이세요.</p></div>
+      <div class="game-layout">
+        <div class="game-panel">
+          <div class="game-toolbar"><div><span class="game-label">SCORE</span><strong id="score">0</strong></div><div><span class="game-label">BEST</span><strong id="high-score">0</strong></div><div><span class="game-label">ENEMIES</span><strong>5</strong></div></div>
+          <div class="canvas-wrap"><canvas id="game-canvas" width="640" height="400" aria-label="지렁이 게임 화면"></canvas><p id="game-overlay" class="game-overlay">시작 버튼을 눌러 플레이하세요.</p></div>
+          <p id="game-status" class="game-status" role="status" aria-live="polite">준비됨</p>
+          <div class="game-actions"><button id="start-button" class="button button-primary" type="button">시작</button><button id="pause-button" class="button button-secondary" type="button" disabled>일시정지</button><button id="restart-button" class="button button-secondary" type="button">재시작</button><button id="stop-button" class="button button-danger" type="button" disabled>종료</button></div>
+          <div class="touch-controls" aria-label="터치 방향 조작"><button type="button" data-direction="up" aria-label="위로 이동">▲</button><div><button type="button" data-direction="left" aria-label="왼쪽 이동">◀</button><button type="button" data-direction="down" aria-label="아래로 이동">▼</button><button type="button" data-direction="right" aria-label="오른쪽 이동">▶</button></div></div>
+        </div>
+        <aside class="game-notes info-card"><h3>HOW TO PLAY</h3><ul><li>음식을 먹으면 1점과 몸 길이를 얻습니다.</li><li>벽, 자기 몸, 적과 접촉하면 지렁이가 사라집니다.</li><li>적 5마리가 같은 속도로 랜덤하게 움직입니다.</li><li>게임 중 일시정지·재시작·종료가 가능합니다.</li></ul></aside>
+      </div>
+    </section>
+
+    <section id="contact" class="section-shell content-section contact-section" aria-labelledby="contact-title">
+      <div class="section-heading"><p class="eyebrow">05 · CONTACT</p><h2 id="contact-title">다음 이야기를 준비하고 있습니다</h2></div>
+      <div class="info-card"><p>연락처와 프로필 이미지는 비공개입니다.</p><p class="muted">공개 가능한 소식은 이 페이지에서 업데이트됩니다.</p></div>
+    </section>
+  </main>
+
+  <footer class="site-footer"><p>© 2026 원준호 · Built with HTML, CSS and JavaScript</p></footer>
+</body>
+</html>
