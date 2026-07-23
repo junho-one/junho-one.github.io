@@ -25,7 +25,9 @@
     panel.setAttribute('aria-hidden', String(!isOpen));
     panel.inert = !isOpen;
     card.classList.toggle('is-open', isOpen);
-    if (shouldScroll) card.scrollIntoView({ behavior: 'smooth', block: 'start' });
+    const topicCard = document.querySelector(`[data-open-target="${panelId}"]`);
+    if (topicCard) topicCard.setAttribute('aria-expanded', String(isOpen));
+    if (shouldScroll) window.requestAnimationFrame(() => card.scrollIntoView({ behavior: 'smooth', block: 'start' }));
   }
 
   accordionTriggers.forEach((trigger) => {
@@ -36,6 +38,8 @@
       setAccordionState(trigger, trigger.getAttribute('aria-expanded') !== 'true');
     });
   });
+
+  topicCards.forEach((topicCard) => topicCard.setAttribute('aria-expanded', 'false'));
 
   topicCards.forEach((topicCard) => topicCard.addEventListener('click', () => {
     const trigger = document.querySelector(`[aria-controls="${topicCard.dataset.openTarget}"]`);
