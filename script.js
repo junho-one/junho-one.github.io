@@ -13,6 +13,41 @@
     }));
   }
 
+  const accordionTriggers = document.querySelectorAll('[data-accordion-trigger]');
+  const topicCards = document.querySelectorAll('[data-open-target]');
+
+  function setAccordionState(trigger, isOpen, shouldScroll = false) {
+    const panelId = trigger.getAttribute('aria-controls');
+    const panel = panelId ? document.getElementById(panelId) : null;
+    const card = trigger.closest('.accordion-card');
+    if (!panel || !card) return;
+    trigger.setAttribute('aria-expanded', String(isOpen));
+    panel.setAttribute('aria-hidden', String(!isOpen));
+    panel.inert = !isOpen;
+    card.classList.toggle('is-open', isOpen);
+    if (shouldScroll) card.scrollIntoView({ behavior: 'smooth', block: 'start' });
+  }
+
+  accordionTriggers.forEach((trigger) => {
+    const panelId = trigger.getAttribute('aria-controls');
+    const panel = panelId ? document.getElementById(panelId) : null;
+    if (panel) panel.inert = true;
+    trigger.addEventListener('click', () => {
+      setAccordionState(trigger, trigger.getAttribute('aria-expanded') !== 'true');
+    });
+  });
+
+  topicCards.forEach((topicCard) => topicCard.addEventListener('click', () => {
+    const trigger = document.querySelector(`[aria-controls="${topicCard.dataset.openTarget}"]`);
+    if (trigger) setAccordionState(trigger, trigger.getAttribute('aria-expanded') !== 'true', true);
+  }));
+
+  if (siteNav) siteNav.querySelectorAll('a[href^="#"]').forEach((link) => link.addEventListener('click', () => {
+    const section = document.querySelector(link.getAttribute('href'));
+    const trigger = section?.querySelector('[data-accordion-trigger]');
+    if (trigger) setAccordionState(trigger, true);
+  }));
+
   const canvas = document.querySelector('#game-canvas');
   const ctx = canvas?.getContext('2d');
   const scoreElement = document.querySelector('#score');

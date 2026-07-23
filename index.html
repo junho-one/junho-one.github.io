@@ -43,28 +43,49 @@
       </aside>
     </section>
 
-    <section id="about" class="section-shell content-section" aria-labelledby="about-title">
-      <div class="section-heading"><p class="eyebrow">01 · ABOUT</p><h2 id="about-title">작은 디테일에서 시작되는 경험</h2></div>
-      <div class="two-column">
-        <p class="section-lede">안녕하세요. 모바일 환경에서 자연스럽고 안정적인 제품 경험을 만드는 일에 관심이 있습니다.</p>
-        <div class="info-card"><h3>기술 스택</h3><ul class="tag-list"><li>Kotlin</li><li>Java</li><li>Android</li><li>Product thinking</li></ul></div>
+    <section class="section-shell topic-cards" aria-labelledby="topics-title">
+      <div class="section-heading"><p class="eyebrow">EXPLORE</p><h2 id="topics-title">주제별로 살펴보기</h2></div>
+      <div class="topic-grid">
+        <button class="topic-card" type="button" data-open-target="about-panel"><span class="number">01</span><span class="topic-card-title">About</span><span class="topic-card-hint">더 알아보기 <span aria-hidden="true">↗</span></span></button>
+        <button class="topic-card" type="button" data-open-target="experience-panel"><span class="number">02</span><span class="topic-card-title">Experience</span><span class="topic-card-hint">경험 보기 <span aria-hidden="true">↗</span></span></button>
+        <button class="topic-card" type="button" data-open-target="research-panel"><span class="number">03</span><span class="topic-card-title">Research</span><span class="topic-card-hint">탐구 보기 <span aria-hidden="true">↗</span></span></button>
+        <button class="topic-card" type="button" data-open-target="games-panel"><span class="number">04</span><span class="topic-card-title">Games</span><span class="topic-card-hint">플레이하기 <span aria-hidden="true">↗</span></span></button>
       </div>
     </section>
 
-    <section id="experience" class="section-shell content-section" aria-labelledby="experience-title">
-      <div class="section-heading"><p class="eyebrow">02 · EXPERIENCE</p><h2 id="experience-title">꾸준히 쌓아온 개발의 시간</h2></div>
-      <article class="timeline-card"><div><span class="timeline-year">2024 — PRESENT</span><h3>삼성전자 · 앱개발자</h3></div><p class="muted">모바일 애플리케이션 개발과 사용자 경험 개선에 집중하고 있습니다.</p></article>
+    <section id="about" class="section-shell content-section accordion-card" aria-labelledby="about-title">
+      <button class="accordion-trigger" type="button" aria-expanded="false" aria-controls="about-panel" data-accordion-trigger>
+        <span class="accordion-heading"><span class="eyebrow">01 · ABOUT</span><span id="about-title" class="accordion-title" role="heading" aria-level="2">작은 디테일에서 시작되는 경험</span></span><span class="accordion-icon" aria-hidden="true">+</span>
+      </button>
+      <div id="about-panel" class="accordion-panel" role="region" aria-labelledby="about-title" aria-hidden="true"><div class="accordion-panel-inner">
+        <div class="two-column"><p class="section-lede">안녕하세요. 모바일 환경에서 자연스럽고 안정적인 제품 경험을 만드는 일에 관심이 있습니다.</p><div class="info-card"><h3>기술 스택</h3><ul class="tag-list"><li>Kotlin</li><li>Java</li><li>Android</li><li>Product thinking</li></ul></div></div>
+      </div></div>
     </section>
 
-    <section id="research" class="section-shell content-section" aria-labelledby="research-title">
-      <div class="section-heading"><p class="eyebrow">03 · RESEARCH</p><h2 id="research-title">더 나은 방법을 탐구합니다</h2></div>
-      <div class="research-grid"><article class="info-card"><span class="number">01</span><h3>모바일 UX</h3><p class="muted">빠르고 이해하기 쉬운 인터랙션을 고민합니다.</p></article><article class="info-card"><span class="number">02</span><h3>안정적인 코드</h3><p class="muted">읽기 쉽고 오래 유지되는 구조를 지향합니다.</p></article></div>
-      <p class="private-note">프로젝트 상세 내용과 공개 포트폴리오는 비공개입니다.</p>
+    <section id="experience" class="section-shell content-section accordion-card" aria-labelledby="experience-title">
+      <button class="accordion-trigger" type="button" aria-expanded="false" aria-controls="experience-panel" data-accordion-trigger>
+        <span class="accordion-heading"><span class="eyebrow">02 · EXPERIENCE</span><span id="experience-title" class="accordion-title" role="heading" aria-level="2">꾸준히 쌓아온 개발의 시간</span></span><span class="accordion-icon" aria-hidden="true">+</span>
+      </button>
+      <div id="experience-panel" class="accordion-panel" role="region" aria-labelledby="experience-title" aria-hidden="true"><div class="accordion-panel-inner">
+        <article class="timeline-card"><div><span class="timeline-year">2024 — PRESENT</span><h3>삼성전자 · 앱개발자</h3></div><p class="muted">모바일 애플리케이션 개발과 사용자 경험 개선에 집중하고 있습니다.</p></article>
+      </div></div>
     </section>
 
-    <section id="games" class="section-shell content-section game-section" aria-labelledby="games-title">
-      <div class="section-heading"><p class="eyebrow">04 · GAMES</p><h2 id="games-title">Retro Worm</h2><p class="section-lede">방향키, WASD 또는 화면 버튼으로 지렁이를 움직이세요.</p></div>
-      <div class="game-layout">
+    <section id="research" class="section-shell content-section accordion-card" aria-labelledby="research-title">
+      <button class="accordion-trigger" type="button" aria-expanded="false" aria-controls="research-panel" data-accordion-trigger>
+        <span class="accordion-heading"><span class="eyebrow">03 · RESEARCH</span><span id="research-title" class="accordion-title" role="heading" aria-level="2">더 나은 방법을 탐구합니다</span></span><span class="accordion-icon" aria-hidden="true">+</span>
+      </button>
+      <div id="research-panel" class="accordion-panel" role="region" aria-labelledby="research-title" aria-hidden="true"><div class="accordion-panel-inner">
+        <div class="research-grid"><article class="info-card"><span class="number">01</span><h3>모바일 UX</h3><p class="muted">빠르고 이해하기 쉬운 인터랙션을 고민합니다.</p></article><article class="info-card"><span class="number">02</span><h3>안정적인 코드</h3><p class="muted">읽기 쉽고 오래 유지되는 구조를 지향합니다.</p></article></div><p class="private-note">프로젝트 상세 내용과 공개 포트폴리오는 비공개입니다.</p>
+      </div></div>
+    </section>
+
+    <section id="games" class="section-shell content-section game-section accordion-card" aria-labelledby="games-title">
+      <button class="accordion-trigger" type="button" aria-expanded="false" aria-controls="games-panel" data-accordion-trigger>
+        <span class="accordion-heading"><span class="eyebrow">04 · GAMES</span><span id="games-title" class="accordion-title" role="heading" aria-level="2">Retro Worm</span></span><span class="accordion-icon" aria-hidden="true">+</span>
+      </button>
+      <div id="games-panel" class="accordion-panel" role="region" aria-labelledby="games-title" aria-hidden="true"><div class="accordion-panel-inner">
+        <p class="section-lede game-intro">방향키, WASD 또는 화면 버튼으로 지렁이를 움직이세요.</p><div class="game-layout">
         <div class="game-panel">
           <div class="game-toolbar"><div><span class="game-label">SCORE</span><strong id="score">0</strong></div><div><span class="game-label">BEST</span><strong id="high-score">0</strong></div><div><span class="game-label">ENEMIES</span><strong>5</strong></div></div>
           <div class="canvas-wrap"><canvas id="game-canvas" width="640" height="400" aria-label="지렁이 게임 화면"></canvas><p id="game-overlay" class="game-overlay">시작 버튼을 눌러 플레이하세요.</p></div>
@@ -73,7 +94,8 @@
           <div class="touch-controls" aria-label="터치 방향 조작"><button type="button" data-direction="up" aria-label="위로 이동">▲</button><div><button type="button" data-direction="left" aria-label="왼쪽 이동">◀</button><button type="button" data-direction="down" aria-label="아래로 이동">▼</button><button type="button" data-direction="right" aria-label="오른쪽 이동">▶</button></div></div>
         </div>
         <aside class="game-notes info-card"><h3>HOW TO PLAY</h3><ul><li>음식을 먹으면 1점과 몸 길이를 얻습니다.</li><li>벽, 자기 몸, 적과 접촉하면 지렁이가 사라집니다.</li><li>적 5마리가 같은 속도로 랜덤하게 움직입니다.</li><li>게임 중 일시정지·재시작·종료가 가능합니다.</li></ul></aside>
-      </div>
+        </div>
+      </div></div>
     </section>
 
     <section id="contact" class="section-shell content-section contact-section" aria-labelledby="contact-title">
